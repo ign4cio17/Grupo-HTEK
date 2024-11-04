@@ -1,63 +1,64 @@
+
+
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
 }
+
+
+body{
+    background-color: #fff59d;
+}
+
 .cabecera{
+    background-color: #1b3039;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
-    margin-left: 10px;
+    height: 85px;
+    padding: 5px 10%;
+    width: 100%;
 }
-nav{
-    position: relative;
-  align-items: center;
-    border-radius: 8px;
+
+.cabecera .logo{
+    cursor: pointer;
 }
-nav a{
-    position: relative;
+
+.cabecera .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+    border-radius: 50%;
+}
+
+.cabecera .logo img:hover{
+    transform: scale(1.2);
+}
+
+.cabecera .nav-links{
+    list-style: none;
+}
+
+.cabecera .nav-links li{
     display: inline-block;
-    font-size: 1em;
-    font-weight: 500;
-    color: #fff;
-    text-decoration: none;
-    padding: 0 23px;
-    z-index: 1;
+    padding: 0 20px;    
 }
-nav span{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 95px;
-    height: 100%;
-    background: linear-gradient(45deg, #4f1919,#ff3333);
-    border-radius: 8px;
-    transition: .5s;
+
+.cabecera .nav-links li:hover{
+    transform: scale(1.1);
 }
-nav a:nth-child(1):hover~span
-{
-left: 0;
+
+.cabecera .nav-links a{
+    font-size: 700;
+    color: #eceff1;
+    text-decoration: none;    
 }
-nav a:nth-child(2):hover~span
-{
-left: 95px;
-}
-nav a:nth-child(3):hover~span
-{
-left: 185px;
-width: 110px;
-}
-nav a:nth-child(4):hover~span
-{
-left: 285px;
-width: 115px;
-}
-nav a:nth-child(5):hover~span
-{
-left: 413px;
-width: 110px;
+
+.cabecera .nav-links li a:hover{
+    color: #ffbc0e;
 }
 
 .cabecera .btn button{
