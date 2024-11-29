@@ -15,6 +15,17 @@ h1{
     text-align: center;
 }
 
+@media (max-width: 480px) {
+    .contenido{
+        width: 90%;
+        display: inline-block;
+        margin: 10px;
+        color: white;
+        text-align: center;
+        padding-left: 20px;
+    }
+}
+
 mat-card{
     background-color: transparent;
     border-radius: 12px;

@@ -1,34 +1,14 @@
+/* Estilo para la barra de navegación */
 mat-toolbar {
     background-color: #1b3039;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 100px;
     position: sticky;
     top: 0;
     z-index: 1071;
-}
-
-.nav-links {
-    list-style: none;
-}
-
-.nav-links li {
-    display: inline-block;
-    padding: 0 20px;
-}
-
-.nav-links li:hover {
-    transform: scale(1.1);
-}
-
-.nav-links a {
-    font-size: 700;
-    color: #eceff1;
-    text-decoration: none;
-}
-
-.nav-links li a:hover {
-    color: #ffbc0e;
+    padding: 0 16px;
 }
 
 .logo {
@@ -44,4 +24,127 @@ mat-toolbar {
 
 .logo img:hover {
     transform: scale(1.2);
+}
+
+.mat-icon-button {
+    color: #eceff1;
+}
+
+/* Estilos para el menú lateral */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* Ocultar menú fuera de la pantalla */
+    width: 250px;
+    height: 100%;
+    background-color: #1b3039;
+    transition: left 0.3s ease;
+    /* Deslizar el menú */
+    z-index: 1000;
+    padding-top: 60px;
+    /* Espacio para que no se superponga con la barra */
+}
+
+.side-menu.active {
+    left: 0;
+    /* Mostrar menú cuando está activo */
+}
+
+.side-menu .nav-links li {
+    text-align: left;
+    padding: 20px;
+}
+
+.side-menu .nav-links a {
+    color: #eceff1;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-links li {
+        display: block;
+        padding: 20px 0;
+    }
+    
+    .nav-links li:hover {
+        transform: scale(1.1);
+    }
+    
+    .nav-links a {
+        font-size: 16px;
+        color: #eceff1;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-links li a:hover {
+        color: #ffbc0e;
+    }
+    
+
+    /* Menú oculto por defecto en pantallas pequeñas */
+    .nav-links {
+        display: none;
+    }
+
+    /* Cuando el menú está activo, mostrarlo */
+    .side-menu.active .nav-links {
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 30px;
+    }
+
+    /* Ajustes de los iconos del usuario */
+    .mat-icon-button {
+        margin-right: 10px;
+    }
+
+    /* Input de toggle (modo oscuro) */
+    #toggle {
+        display: none;
+    }
+
+    #label_toggle {
+        display: block;
+        font-size: 20px;
+        cursor: pointer;
+        color: #eceff1;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-links {
+        list-style: none;
+    }
+
+    .nav-links li {
+        display: inline-block;
+        padding: 0 20px;
+    }
+
+    .nav-links li:hover {
+        transform: scale(1.1);
+    }
+
+    .nav-links a {
+        font-size: 700;
+        color: #eceff1;
+        text-decoration: none;
+    }
+
+    .nav-links li a:hover {
+        color: #ffbc0e;
+    }
+
 }

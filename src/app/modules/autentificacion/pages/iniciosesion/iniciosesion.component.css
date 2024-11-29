@@ -1,4 +1,14 @@
+.divinputs{
+    display: flex;
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+}
+mat-form-field{
+    width: 100%;
+}
 
+@media (min-width: 768px) {
 .container {
     display: flex;
     margin-top: 50px;
@@ -40,4 +50,5 @@ a {
     height: fit-content;
     width: fit-content;
     margin-top: unset;
+}
 }

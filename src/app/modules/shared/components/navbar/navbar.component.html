@@ -1,35 +1,45 @@
 <mat-toolbar class="text-light">
-  <div class="logo">
+  <div *ngIf="!pantallachica" class="logo">
     <img src="../../../../../assets/img/logo-de-la-empresa.jpg" alt="Logo de la marca">
   </div>
-  <!-- menu de producto -->
-  <nav>
+
+  <!-- Botón de menú hamburguesa (aparece en pantallas pequeñas) -->
+  <button *ngIf="pantallachica" (click)="toggleMenu()" class="btn text-light menu-icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="cont-grande">
     <ul class="nav-links">
       <li><a href="#">Inicio</a></li>
       <li><a href="/producto">Productos</a></li>
-      <li><a href="#">Contato</a></li>
+      <li><a href="#">Contacto</a></li>
       <li><a href="#infofooter">Nosotros</a></li>
     </ul>
-  </nav>
-  <!-- inicio de sesion -->
+  </div>
+
+  <!-- menú lateral (se despliega de manera lateral en pantallas pequeñas) -->
+  <div *ngIf="pantallachica" class="side-menu" [ngClass]="{'active': menuabierto}">
+    <ul class="nav-links">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="/producto">Productos</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+      <li><a href="#infofooter">Nosotros</a></li>
+    </ul>
+  </div>
+
+  <!-- botones de usuario y carrito -->
   <div>
-    <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+    <button mat-icon-button [matMenuTriggerFor]="usuario">
+      <mat-icon>person</mat-icon>
+    </button>
     <mat-menu #usuario="matMenu">
       <button mat-menu-item routerLink="/registro" *ngIf="!loggeado">Registrarse</button>
       <button mat-menu-item routerLink="/inicio-sesión" *ngIf="!loggeado">Iniciar sesión</button>
-      <button mat-menu-item (click)="CerrarSesion()" *ngIf="loggeado">Cerrar Sesion</button>
+      <button mat-menu-item (click)="CerrarSesion()" *ngIf="loggeado">Cerrar Sesión</button>
     </mat-menu>
-    <!-- carrito -->
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
-      routerLink="/inicio">
-      <mat-icon>favorite</mat-icon>
-    </button>
 
-    <button mat-icon-button class="example-icon favorite-icon" routerLink="/carrito" aria-label="Example icon-button with heart icon">
+
+    <button mat-icon-button routerLink="/carrito">
       <mat-icon>shopping_cart</mat-icon>
     </button>
-
-    <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
-    <input type="checkbox" id="toggle" (click)="cambiarfondo()">
   </div>
 </mat-toolbar>
